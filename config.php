@@ -27,10 +27,8 @@ define("CODE_FILE_UPLOAD_DIRECTORY", __DIR__ . "/uploaded_files/code/");
 $server = $_SERVER["SERVER_NAME"] ?? "";
 if ($server == "localhost") {
     define("MASTER_ENVIRONMENT", "LOCAL");
-} else if ($server == "api.altiusinvestech.com") {
-    define("MASTER_ENVIRONMENT", "PROD");
 } else {
-    define("MASTER_ENVIRONMENT", "DEV");
+    define("MASTER_ENVIRONMENT", "PROD");
 }
 
 
@@ -40,17 +38,6 @@ if (MASTER_ENVIRONMENT == "LOCAL") {
     define('DB_HOST', 'localhost');
     define('DB_USER', 'root');
     define('DB_PASSWORD', 'localhost@1432');
-
-
-
-} else if (MASTER_ENVIRONMENT == "DEV") {
-    //DATABASE CONNECTION
-    define('DB_NAME', 'compiler');
-    define('DB_HOST', 'localhost');
-    define('DB_USER', 'root');
-    define('DB_PASSWORD', 'localhost@1432');
-
-
 } else if (MASTER_ENVIRONMENT == "PROD") {
     //DATABASE CONNECTION
     define('DB_NAME', 'compiler');
