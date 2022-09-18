@@ -87,7 +87,7 @@ async function executeCode() {
 	fmData.append("input_var", $("#input").val());
 	let status = 1;
 
-	await fetch("http://172.16.95.145/compiler/app/compiler/code", {
+	await fetch("http://127.0.0.1/compiler/backend/app/compiler/code", {
 		method: "POST",
 		body: fmData,
 	})
