@@ -6,7 +6,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./online_compiler:/app
+      - ./online_compiler/backend:/app
 
   db:
     image: mysql
