@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Codeboard Online IDE</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="header"> Online IDE </div>
+    <div class="control-bar">
+        <div class="control-panel">
+            Select Language:
+            &nbsp; &nbsp;
+            <select id="languages" class="languages" onchange="changeLanguage()">
+                <option value="c"> C </option>
+                <option value="cpp"> C++ </option>
+                <option value="php"> PHP </option>
+                <option value="python"> Python </option>
+                <option value="javascript"> Node JS </option>
+                <option value="java"> Java </option>
+            </select>
+        </div>
+        <div class="control-panel">
+            Select Editor theme: 
+            &nbsp; &nbsp;
+            <select id="theme" class="theme" onchange="changeTheme()">
+                <option value="twilight"> Twilight </option>
+                <option value="monokai"> Monokai </option>
+                <option value="textmate"> Textmate </option>
+                <option value="eclipse"> Eclipse </option>
+                <option value="solarized_dark"> Solarized Dark</option>
+                <option value="tomorrow_night"> Tomorrownight Night </option>
+                <option value="github"> Github </option>
+            </select>
+        </div>
+        <div class="button-container">
+            <button class="btn" onclick="executeCode()"> Run </button>
+        </div>
+    </div>
+    
+    <div class="main-container">
+        <div class="editor" id="editor"></div>
+        <div class="input_output">
+            <div class="input">
+                <div class="input-header"> Input </div>
+                <textarea id="input" class="input-textarea" placeholder="Enter input here"></textarea>
+            </div>
+            <div class="output">
+                <div class="output-header"> Output </div>
+                <div class="execution_time_div">
+                    Total Execution Time is: <span id="execution_time"> 0 </span> s
+                </div>
+                <textarea id="output" class="output-textarea" placeholder="Output will be displayed here" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="loader">
+
+    </div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/lib/ace.js"></script>
+    <script src="js/lib/theme-monokai.js"></script>
+    <script src="js/ide.js"></script>
+    <script src="js/lib/ext-language_tools.js"></script>
+</body>
+</html>
